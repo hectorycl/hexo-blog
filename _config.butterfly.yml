@@ -1,0 +1,60 @@
+# ========== 网站信息 ==========
+site:
+  title: Butterfly技术博客
+  subtitle: 记录学习与成长
+  description: 分享技术教程、学习心得和生活感悟
+  keywords: 
+    - 技术
+    - 博客
+    - 学习
+  author: hectorycl  # 你的名字
+  language: zh-CN
+  timezone: Asia/Shanghai
+  favicon: /img/favicon.ico
+
+# ========== 导航菜单 ==========
+menu:
+  Home: / || fas fa-home
+  Archives: /archives || fas fa-archive
+  Tags: /tags || fas fa-tags
+  Categories: /categories || fas fa-folder-open
+  About: /about || fas fa-user
+
+# ========== 头像设置 ==========
+avatar:
+  img: /img/avatar.png  # 稍后你可以上传头像
+  effect: true
+
+# ========== 社交链接 ==========
+social:
+  fa-github: https://github.com/hectorycl || Github
+  fa-envelope: mailto:923135595@qq.com || Email  # 修正这里
+
+# ========== 页面底部 ==========
+footer:
+  owner:
+    enable: true
+    since: 2026
+  copyright: false
+  custom_text: "由 Hexo & Butterfly 强力驱动"
+
+# ========== 文章设置 ==========
+post:
+  reward:
+    enable: false
+  copyright:
+    enable: true
+    license: CC BY-NC-SA 4.0
+
+# ========== 主题样式 ==========
+theme_color:
+  enable: true
+  main: "#49b1f5"
+  paginator: "#00c4b6"
+
+# ========== 首页设置 ==========
+index:
+  post_url_target: _blank
+
+# ========== 代码高亮 ==========
+highlight_theme: mac
