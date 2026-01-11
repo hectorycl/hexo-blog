@@ -7,7 +7,7 @@ site:
     - 技术
     - 博客
     - 学习
-  author: hectorycl  # 你的名字
+  author: hectorycl
   language: zh-CN
   timezone: Asia/Shanghai
   favicon: /img/favicon.ico
@@ -22,13 +22,13 @@ menu:
 
 # ========== 头像设置 ==========
 avatar:
-  img: /img/avatar.png  # 稍后你可以上传头像
+  img: /img/avatar.png
   effect: true
 
 # ========== 社交链接 ==========
 social:
   fa-github: https://github.com/hectorycl || Github
-  fa-envelope: mailto:923135595@qq.com || Email  # 修正这里
+  fa-envelope: mailto:923135595@qq.com || Email
 
 # ========== 页面底部 ==========
 footer:
@@ -58,3 +58,17 @@ index:
 
 # ========== 代码高亮 ==========
 highlight_theme: mac
+
+# ========== 背景设置 ==========
+background:
+  enable: true
+  url: /img/y01.jpg
+  use-js: false
+  fixed: true
+  repeat: no-repeat
+  size: cover
+  position: center
+
+# ========== 自定义CSS ==========
+custom_css:
+  - /css/custom.css

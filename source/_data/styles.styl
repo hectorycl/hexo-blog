@@ -1,0 +1,37 @@
+/* ========== 自定义背景 ========== */
+/* 设置整个页面背景 */
+body {
+    background: url('/img/y01.jpg') center center / cover no-repeat fixed !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 为内容区域添加半透明背景，提高可读性 */
+#page-header,
+#recent-posts,
+.card-widget,
+.post-bg {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 文章卡片背景 */
+.post-card {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 导航栏背景 */
+#nav {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* 代码块背景 */
+.highlight {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
