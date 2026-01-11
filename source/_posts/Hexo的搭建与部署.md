@@ -30,7 +30,7 @@ git config --list
 
 生成 SSH Key：
 
-ssh-keygen -t ed25519 -C "923135595@qq.com"
+ssh-keygen -t ed25519 -C "QQ@qq.com"
 
 
 文件路径默认 /c/Users/hector/.ssh/id_ed25519 → 回车
