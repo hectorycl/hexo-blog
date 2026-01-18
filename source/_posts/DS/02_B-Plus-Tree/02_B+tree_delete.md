@@ -1,3 +1,14 @@
+---
+title: 02. B+ 树删除复盘
+date: 2026-01-18 10:00:00
+categories:
+  - [DS, B-Plus-Tree]  # 重点：这表示 DS 是父分类，B-Plus-Tree 是子分类
+tags:
+  - 数据结构
+  - B+ 树
+---
+
+
 # B+ 树删除实现：从 Bug 到稳定架构的完整复盘
 
 > 关键词：B+ 树、删除操作、下溢（underflow）、borrow / merge、fixup、架构设计
