@@ -126,3 +126,11 @@ Output Directory：public
     git commit -m "update blog"
 
     git push 
+
+4. 本地查看
+
+    hexo clean
+    
+    hexo g 
+
+    hexo s
