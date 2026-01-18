@@ -28,23 +28,16 @@ git config --list
 
 打开 Git Bash
 
-生成 SSH Key：
-
-ssh-keygen -t ed25519 -C "QQ@qq.com"
+生成 SSH Key：ssh-keygen -t ed25519 -C "QQ@qq.com"
 
 
 文件路径默认 /c/Users/hector/.ssh/id_ed25519 → 回车
-
-
-
-会生成：
 
 id_ed25519 → 私钥
 
 id_ed25519.pub → 公钥
 
 查看公钥内容：cat ~/.ssh/id_ed25519.pub
-
 
 复制输出内容添加到 GitHub：
 
@@ -64,7 +57,9 @@ ssh -T git@github.com
 切换远程 URL 到 SSH：
 
 cd /f/blog/blog_hexo
+
 git remote set-url origin git@github.com:hectorycl/hexo-blog.git
+
 git remote -v
 
 输出显示 SSH URL
@@ -108,3 +103,26 @@ Build Command：npm run build
 Output Directory：public
 
 点击 Deploy,成功后 Hexo 博客上线
+
+
+
+### 九. 相关命令
+
+1.  进入到博客目录 
+
+    cd blog_hexo
+
+
+2.  部署上线
+    
+    hexo clean 
+    
+    hexo g -d
+
+3.  备份源码
+
+    git add .
+
+    git commit -m "update blog"
+
+    git push 
