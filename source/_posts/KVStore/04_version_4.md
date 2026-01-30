@@ -9,7 +9,7 @@ tags:
 
 
 # 一.总览级架构分层图
-```
+```c
 ┌────────────────────────────────────┐
 │ Public API Layer（对外接口层）      │
 │ 参数校验 / 模式判断 / WAL / 调度   │
@@ -40,7 +40,7 @@ tags:
 
 #### 函数列表
 
-```
+```c
 kvstore_create(const char *)
 kvstore_destroy(kvstore *)
 
@@ -60,7 +60,7 @@ kvstore_debug_set_mode(kvstore *, kvstore_mode_t)
 > Apply Layer = 只做状态改变，不校验，不写日志
 
 #### 函数列表
-```
+```c
 kvstore_apply_put(kvstore *, int, long)
 kvstore_apply_del(kvstore *, int)
 ```
@@ -88,7 +88,7 @@ kvstore_apply_del(kvstore *, int)
 **负责持久化“操作”而不是“状态”**
 
 #### 函数列表
-```
+```c
 kvstore_open_log(kvstore *, const char *)
 kvstore_log_put(kvstore *, int, long)
 kvstore_log_del(kvstore *, int)
@@ -111,7 +111,7 @@ kvstore_crc_check(const char *, const char *)
 **崩溃恢复的核心**
 
 #### 函数列表
-```
+```c
 kvstore_replay_log(kvstore *)
 ```
 > replay = 只读 WAL + 调用 API 
@@ -122,7 +122,7 @@ kvstore_replay_log(kvstore *)
 ### 正常写入流程（用户调用 / mian 调用）
 **用户想存数据，必须走全套流程**
 
-```
+```c
 1. 通过 public API，调用应用层函数
 int kvstore_put(kvstore* store, int key, long val) {
     ...
@@ -149,7 +149,8 @@ static int kvstore_apply_put_internal(bptree* tree, int key, long value, kvstore
 
 ### 重放流程（启动时调用） 
 **重放时，绕过写日志的步骤，直接在内存里修改**
-```
+
+```c
 static int kvstore_replay_log(kvstore* store) {
     // ... 循环读取 line ...
     if (sscanf(line, "PUT %d %ld", &key, &val) == 2) {
@@ -167,7 +168,7 @@ static int kvstore_replay_log(kvstore* store) {
 
 ## ⑦ Snapshot / Compaction（快照与压缩）
 #### 函数列表
-```
+```c
 kvstore_compact(kvstore *)
 kvstore_maybe_compact(kvstore *)
 
@@ -187,7 +188,7 @@ snapshot_write_cb(int, long, void *)
     - WAL 太大 → 压缩
 
 ## 辅助 / 工具层
-```
+```c
 kvsotre_strerror(int)
 ```
 - 错误码 → 字符串， 不属于任何业务层
