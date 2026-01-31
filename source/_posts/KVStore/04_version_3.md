@@ -57,7 +57,7 @@ kvstore_debug_set_mode(kvstore *, kvstore_mode_t)
 
 ## ② Apply Layer（应用层 / 状态变更层）
 
-> Apply Layer = 只做状态改变，不校验，不写日志
+> Apply Layer = 只做状态改变，不校验，不写日志，是系统中**唯一允许修改内存状态的入口**
 
 #### 函数列表
 ```c
@@ -114,7 +114,7 @@ kvstore_crc_check(const char *, const char *)
 ```c
 kvstore_replay_log(kvstore *)
 ```
-> replay = 只读 WAL + 调用 API 
+> replay = 只读 WAL + 调用 Apply Layer(或 Apply Internal)，
 > 物理层面：使用 fgets 把磁盘上已经存在的旧记录一行行读进内存，操作模式是 `w(Read)`, 而不是 `a+(Append)`
 > 逻辑层面：只读状态下的程序，只能 `看`日志内容，不能在重放过程中又往里面写新东西。
 
