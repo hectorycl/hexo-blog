@@ -88,7 +88,7 @@ tags:
 
 ## 核心写入流程
 
-> 当调用`kvstore_put(key, val)`时，内部发生了什么？？
+> 当调用`kvstore_put(key, val)`时，内部发生了什么？
 
 1. **API 入口：**`kvstore_put()` 调用 `kvstore_exec_write()`。
 
