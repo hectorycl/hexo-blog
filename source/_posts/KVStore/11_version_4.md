@@ -14,6 +14,7 @@ tags:
 ```c
 const char* kvstore_strerror();
 uint32_t crc32();
+static int kvstore_crc_check();
 ```
 
 ## 2. 函数复盘 + 规范注释
@@ -76,5 +77,31 @@ uint32_t crc32(const char* s) {
     }
 
     return ~crc;
+}
+```
+
+### 2.3 `static int kvstore_crc_check()`
+
+```c
+/**
+ * kvstore_crc_check - 校验单行日志的完整性
+ *  - 成功返回 1， 失败返回 0
+ * 注意：此函数会修改 line 字符串（就地切割）
+ *      是确保存储引擎在崩溃恢复时不载入脏数据的最后屏障
+ */
+static int kvstore_crc_check(const char* payload, const char* crc_str) {
+    // 1. 基础校验
+    if (!payload || !crc_str) return 0;
+
+    // 2. 字符串转数字
+    char* end = NULL;
+    uint32_t crc_stored = (uint32_t)strtoul(crc_str, &end, 10);
+
+    /* 3. 健壮性检查：校验 CRC 字段本身是否损坏  */
+    if (end == crc_str || *end != '\0')
+        return 0;
+
+    uint32_t crc_calc = crc32(payload);
+    return crc_calc == crc_stored;
 }
 ```
