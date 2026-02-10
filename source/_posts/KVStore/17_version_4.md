@@ -1,6 +1,6 @@
 ---
 title: 17. KVStore 版本四 🔟 状态机
-date: 2026-02-10 15:00:00
+date: 2026-02-10 15:30:00
 categories:
   - [KVStore, v4.0]  
 tags:

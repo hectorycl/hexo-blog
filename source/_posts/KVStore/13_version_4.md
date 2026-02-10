@@ -1,6 +1,6 @@
 ---
 title: 13. KVStore 版本四 6️⃣ WAL 写入
-date: 2026-02-10 14:00:00
+date: 2026-02-10 14:30:00
 categories:
   - [KVStore, v4.0]  
 tags:
@@ -8,7 +8,7 @@ tags:
 ---
 
 
-6️⃣ WAL 写入
+# 6️⃣ WAL 写入
 
 ## 1. 函数集合
 ```c
