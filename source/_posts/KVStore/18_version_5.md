@@ -83,3 +83,20 @@ struct _bptree {
 
 > 通过`path`栈，把一个原本需要全表锁定的全局操作，转化为了一个**局部受控的局部操作**。
 
+----
+### 删除模型
+```c++
+悲观查找（自上而下 WRLock）
+        ↓
+安全节点判断（child > MIN_KEYS）
+        ↓
+提前释放祖先锁（Crabbing）
+        ↓
+叶子删除
+        ↓
+Path 托管向上修复
+        ↓
+Root Double Check 缩高
+        ↓
+统一释放 path
+```
