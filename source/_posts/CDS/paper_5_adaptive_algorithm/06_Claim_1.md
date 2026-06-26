@@ -212,15 +212,17 @@ $$
 因此：
 
 $$
-E[ch(v_i)]=(1-p(v_i))\cdot 1+p(v_i)(NWS(v_i)-1)
+\begin{aligned}
+E[ch(v_i)]
+&= (1-p(v_i))\cdot 1 + p(v_i)(NWS(v_i)-1) \\
+&= 1-p(v_i)+p(v_i)(NWS(v_i)-1)
+\end{aligned}
 $$
 
 也就是：
 
 $$
-E[ch(v_i)]
-=
-1-p(v_i)+p(v_i)(NWS(v_i)-1)
+E[ch(v_i)]=1-p(v_i)+p(v_i)(NWS(v_i)-1)
 $$
 
 而白色节点权重定义就是：
