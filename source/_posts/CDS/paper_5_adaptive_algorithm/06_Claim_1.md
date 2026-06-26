@@ -8,6 +8,7 @@ tags:
 categories:
   - CDS
   - paper_5
+mathjax: true
 ---
 
 # Claim 1
@@ -151,11 +152,7 @@ $$
 代入公式 (9)：
 
 $$
-=
-\frac{1}{w_{S_{i-1}}(v_i)}
-\cdot
-w_{S_{i-1}}(v_i)
-=1
+\frac{1}{w_{S_{i-1}}(v_i)} \cdot w_{S_{i-1}}(v_i) = 1
 $$
 
 这刚好等于这一轮 probe 的真实代价。
@@ -215,11 +212,7 @@ $$
 因此：
 
 $$
-E[ch(v_i)]
-=
-(1-p(v_i))\cdot 1
-+
-p(v_i)(NWS(v_i)-1)
+E[ch(v_i)]=(1-p(v_i))\cdot 1+p(v_i)(NWS(v_i)-1)
 $$
 
 也就是：
@@ -233,9 +226,7 @@ $$
 而白色节点权重定义就是：
 
 $$
-w(v_i)=
-\frac{1}
-{1-p(v_i)+p(v_i)(NWS(v_i)-1)}
+w(v_i)=\frac{1}{1-p(v_i)+p(v_i)(NWS(v_i)-1)}
 $$
 
 所以：
@@ -258,12 +249,7 @@ $$
 原文中最关键的一步是：
 
 $$
-\sum_{u\in V}
-E[1_{v\to u}cw(u)\mid \Gamma]
-=
-w_{S_{i-1}}(v_i)
-E[ch(v_i)\mid \Gamma]
-=1
+\sum_{u\in V}E[1_{v\to u}cw(u)\mid \Gamma]=w_{S_{i-1}}(v_i)E[ch(v_i)\mid \Gamma]=1
 $$
 
 拆开一下。
@@ -273,8 +259,7 @@ $$
 ### 第一部分
 
 $$
-\sum_{u\in V}
-E[1_{v\to u}cw(u)\mid \Gamma]
+\sum_{u\in V}E[1_{v\to u}cw(u)\mid \Gamma]
 $$
 
 表示：
@@ -312,10 +297,7 @@ $$
 所以：
 
 $$
-w(v_i)\cdot E[ch(v_i)\mid \Gamma]
-=
-w(v_i)\cdot \frac{1}{w(v_i)}
-=1
+w(v_i)\cdot E[ch(v_i)\mid \Gamma]=w(v_i)\cdot \frac{1}{w(v_i)}=1
 $$
 
 所以每个被 probe 节点在它那一轮贡献的期望 charge 总额就是 1。
@@ -327,9 +309,7 @@ $$
 经过前面的化简，得到：
 
 $$
-\sum_{u\in V}E[cw(u)]
-=
-\sum_{v\in V}Pr[v\in S]
+\sum_{u\in V}E[cw(u)]=\sum_{v\in V}Pr[v\in S]
 $$
 
 右边是什么？
@@ -353,19 +333,13 @@ $$
 取期望：
 
 $$
-E[|S|]
-=
-E\left[\sum_{v\in V}1_{v\in S}\right]
-=
-\sum_{v\in V}Pr[v\in S]
+E[|S|]=E\left[\sum_{v\in V}1_{v\in S}\right]=\sum_{v\in V}Pr[v\in S]
 $$
 
 所以：
 
 $$
-\sum_{u\in V}E[cw(u)]
-=
-E[|S|]
+\sum_{u\in V}E[cw(u)]=E[|S|]
 $$
 
 Claim 1 得证。
